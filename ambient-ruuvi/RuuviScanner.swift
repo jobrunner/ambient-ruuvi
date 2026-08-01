@@ -11,7 +11,7 @@ final class RuuviScanner: NSObject, ObservableObject {
 
     private var central: CBCentralManager!
 
-    private struct SeenTag {
+    struct SeenTag {
         var data: RuuviData
         var rssi: Int
         var lastSeen: Date
@@ -20,6 +20,10 @@ final class RuuviScanner: NSObject, ObservableObject {
     // ein näherer Tag kann übernehmen, ein verschwundener Tag läuft ab.
     private var seenTags: [UUID: SeenTag] = [:]
     private let expiryInterval: TimeInterval = 10
+    // Räumt abgelaufene Tags auch dann auf, wenn keine Advertisements mehr
+    // eintreffen — sonst friert ein einzelner Tag, der außer Reichweite gerät,
+    // die Anzeige ein.
+    private var refreshTimer: Timer?
 
     func start() {
         if central == nil {
@@ -31,6 +35,8 @@ final class RuuviScanner: NSObject, ObservableObject {
 
     func stop() {
         central?.stopScan()
+        refreshTimer?.invalidate()
+        refreshTimer = nil
     }
 
     private func beginScan() {
@@ -41,6 +47,34 @@ final class RuuviScanner: NSObject, ObservableObject {
             withServices: nil,
             options: [CBCentralManagerScanOptionAllowDuplicatesKey: true]
         )
+        refreshTimer?.invalidate()
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in
+            Task { @MainActor in self?.refresh() }
+        }
+    }
+
+    /// Evict aged-out tags and publish the strongest survivor, or clear the
+    /// display when none remain. Runs both on each advertisement and on the timer.
+    private func refresh() {
+        seenTags = RuuviScanner.liveTags(from: seenTags, now: Date(), expiry: expiryInterval)
+        if let strongest = RuuviScanner.strongest(in: seenTags) {
+            data = strongest.data
+            rssi = strongest.rssi
+        } else {
+            data = nil
+            rssi = nil
+        }
+    }
+
+    nonisolated static func liveTags(from tags: [UUID: SeenTag],
+                                     now: Date,
+                                     expiry: TimeInterval) -> [UUID: SeenTag] {
+        let cutoff = now.addingTimeInterval(-expiry)
+        return tags.filter { $0.value.lastSeen >= cutoff }
+    }
+
+    nonisolated static func strongest(in tags: [UUID: SeenTag]) -> SeenTag? {
+        tags.values.max(by: { $0.rssi < $1.rssi })
     }
 }
 
@@ -65,20 +99,10 @@ extension RuuviScanner: CBCentralManagerDelegate {
         let r = RSSI.intValue
         let id = peripheral.identifier
         Task { @MainActor in
-            // Update this peripheral's latest reading.
+            // Record this peripheral's latest reading, then evict + republish.
             seenTags[id] = SeenTag(data: parsed, rssi: r, lastSeen: Date())
-
-            // Evict tags that have gone quiet, so a tag out of range stops winning.
-            let cutoff = Date().addingTimeInterval(-expiryInterval)
-            seenTags = seenTags.filter { $0.value.lastSeen >= cutoff }
-
-            // Publish the strongest surviving tag; a closer tag can overtake,
-            // and a single tag keeps refreshing live.
-            if let strongest = seenTags.values.max(by: { $0.rssi < $1.rssi }) {
-                data = strongest.data
-                rssi = strongest.rssi
-                state = .scanning
-            }
+            state = .scanning
+            refresh()
         }
     }
 }

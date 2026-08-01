@@ -10,6 +10,7 @@
 		01A726DD6D3ADE5F054CF772 /* ambient_ruuviApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F6B387E8F1A42DF4B04C07 /* ambient_ruuviApp.swift */; };
 		1FBC4E98BFB79B76B0E3FA0C /* DisplayRowsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE672E2C7833D9A43932ACE /* DisplayRowsTests.swift */; };
 		20E2B9BEE9B548CAFF45D617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3C2950DAADE908AF36244BF /* Assets.xcassets */; };
+		445B3A6A8D424BC07EC11092 /* RuuviScannerLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B20AAB2F6D8877CD395C64 /* RuuviScannerLogicTests.swift */; };
 		48830963474E3247BBF861D5 /* DF5ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202CEF25D7BFAD95DD8FBC9 /* DF5ParserTests.swift */; };
 		69062D46E0CA8C408941D5AD /* RuuviData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FA8451EEB915A08319A70A /* RuuviData.swift */; };
 		70521BF5FEC56DE9725B0D72 /* RuuviDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811A21B28A0CAB044D480FF6 /* RuuviDataTests.swift */; };
@@ -39,6 +40,7 @@
 		A7CD29A910AA69FC2A6000ED /* ambient-ruuviTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "ambient-ruuviTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84215419CCCB0511C1DAC4F /* ambient-ruuvi.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ambient-ruuvi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C2950DAADE908AF36244BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6B20AAB2F6D8877CD395C64 /* RuuviScannerLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuuviScannerLogicTests.swift; sourceTree = "<group>"; };
 		D5F6B387E8F1A42DF4B04C07 /* ambient_ruuviApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ambient_ruuviApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				5DE672E2C7833D9A43932ACE /* DisplayRowsTests.swift */,
 				3EB5A28A7B5890AE44FC21B4 /* PlaceholderTests.swift */,
 				811A21B28A0CAB044D480FF6 /* RuuviDataTests.swift */,
+				B6B20AAB2F6D8877CD395C64 /* RuuviScannerLogicTests.swift */,
 			);
 			path = "ambient-ruuviTests";
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				1FBC4E98BFB79B76B0E3FA0C /* DisplayRowsTests.swift in Sources */,
 				AC2305987E7CD23BC0893CAB /* PlaceholderTests.swift in Sources */,
 				70521BF5FEC56DE9725B0D72 /* RuuviDataTests.swift in Sources */,
+				445B3A6A8D424BC07EC11092 /* RuuviScannerLogicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
