@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		01A726DD6D3ADE5F054CF772 /* ambient_ruuviApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F6B387E8F1A42DF4B04C07 /* ambient_ruuviApp.swift */; };
 		20E2B9BEE9B548CAFF45D617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3C2950DAADE908AF36244BF /* Assets.xcassets */; };
+		69062D46E0CA8C408941D5AD /* RuuviData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FA8451EEB915A08319A70A /* RuuviData.swift */; };
+		70521BF5FEC56DE9725B0D72 /* RuuviDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811A21B28A0CAB044D480FF6 /* RuuviDataTests.swift */; };
 		AC2305987E7CD23BC0893CAB /* PlaceholderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5A28A7B5890AE44FC21B4 /* PlaceholderTests.swift */; };
 		E9E289A05F894D00535F4D3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B080397B566FD276891D1 /* ContentView.swift */; };
 /* End PBXBuildFile section */
@@ -24,7 +26,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02FA8451EEB915A08319A70A /* RuuviData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuuviData.swift; sourceTree = "<group>"; };
 		3EB5A28A7B5890AE44FC21B4 /* PlaceholderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTests.swift; sourceTree = "<group>"; };
+		811A21B28A0CAB044D480FF6 /* RuuviDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuuviDataTests.swift; sourceTree = "<group>"; };
 		9D6B080397B566FD276891D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A7CD29A910AA69FC2A6000ED /* ambient-ruuviTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "ambient-ruuviTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84215419CCCB0511C1DAC4F /* ambient-ruuvi.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ambient-ruuvi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +52,7 @@
 				D5F6B387E8F1A42DF4B04C07 /* ambient_ruuviApp.swift */,
 				B3C2950DAADE908AF36244BF /* Assets.xcassets */,
 				9D6B080397B566FD276891D1 /* ContentView.swift */,
+				02FA8451EEB915A08319A70A /* RuuviData.swift */,
 			);
 			path = "ambient-ruuvi";
 			sourceTree = "<group>";
@@ -65,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				3EB5A28A7B5890AE44FC21B4 /* PlaceholderTests.swift */,
+				811A21B28A0CAB044D480FF6 /* RuuviDataTests.swift */,
 			);
 			path = "ambient-ruuviTests";
 			sourceTree = "<group>";
@@ -156,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC2305987E7CD23BC0893CAB /* PlaceholderTests.swift in Sources */,
+				70521BF5FEC56DE9725B0D72 /* RuuviDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E289A05F894D00535F4D3C /* ContentView.swift in Sources */,
+				69062D46E0CA8C408941D5AD /* RuuviData.swift in Sources */,
 				01A726DD6D3ADE5F054CF772 /* ambient_ruuviApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
