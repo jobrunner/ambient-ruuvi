@@ -10,9 +10,16 @@ final class RuuviScanner: NSObject, ObservableObject {
     @Published var state: ScannerState = .noTag
 
     private var central: CBCentralManager!
-    // Bester (stärkster) RSSI im laufenden Zyklus, damit bei mehreren Tags
-    // der nächste gewinnt. Wird pro schwächerem Fund nicht überschrieben.
-    private var bestRSSI: Int = Int.min
+
+    private struct SeenTag {
+        var data: RuuviData
+        var rssi: Int
+        var lastSeen: Date
+    }
+    // Pro-Peripheral-Tracking mit Expiry: jeder Tag aktualisiert sich live,
+    // ein näherer Tag kann übernehmen, ein verschwundener Tag läuft ab.
+    private var seenTags: [UUID: SeenTag] = [:]
+    private let expiryInterval: TimeInterval = 10
 
     func start() {
         if central == nil {
@@ -28,7 +35,7 @@ final class RuuviScanner: NSObject, ObservableObject {
 
     private func beginScan() {
         guard central.state == .poweredOn else { return }
-        bestRSSI = Int.min
+        seenTags.removeAll()
         state = .scanning
         central.scanForPeripherals(
             withServices: nil,
@@ -56,13 +63,20 @@ extension RuuviScanner: CBCentralManagerDelegate {
         guard let mfg = advertisementData[CBAdvertisementDataManufacturerDataKey] as? Data,
               let parsed = RuuviData.parse(manufacturerData: mfg) else { return }
         let r = RSSI.intValue
+        let id = peripheral.identifier
         Task { @MainActor in
-            // Bei mehreren Tags den stärksten bevorzugen; derselbe Tag aktualisiert
-            // sich fortlaufend, weil sein RSSI nahe am bisherigen Bestwert liegt.
-            if r >= bestRSSI - 5 {
-                bestRSSI = max(bestRSSI, r)
-                data = parsed
-                rssi = r
+            // Update this peripheral's latest reading.
+            seenTags[id] = SeenTag(data: parsed, rssi: r, lastSeen: Date())
+
+            // Evict tags that have gone quiet, so a tag out of range stops winning.
+            let cutoff = Date().addingTimeInterval(-expiryInterval)
+            seenTags = seenTags.filter { $0.value.lastSeen >= cutoff }
+
+            // Publish the strongest surviving tag; a closer tag can overtake,
+            // and a single tag keeps refreshing live.
+            if let strongest = seenTags.values.max(by: { $0.rssi < $1.rssi }) {
+                data = strongest.data
+                rssi = strongest.rssi
                 state = .scanning
             }
         }
