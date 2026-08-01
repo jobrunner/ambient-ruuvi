@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		01A726DD6D3ADE5F054CF772 /* ambient_ruuviApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F6B387E8F1A42DF4B04C07 /* ambient_ruuviApp.swift */; };
 		20E2B9BEE9B548CAFF45D617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3C2950DAADE908AF36244BF /* Assets.xcassets */; };
+		48830963474E3247BBF861D5 /* DF5ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202CEF25D7BFAD95DD8FBC9 /* DF5ParserTests.swift */; };
 		69062D46E0CA8C408941D5AD /* RuuviData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FA8451EEB915A08319A70A /* RuuviData.swift */; };
 		70521BF5FEC56DE9725B0D72 /* RuuviDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811A21B28A0CAB044D480FF6 /* RuuviDataTests.swift */; };
 		AC2305987E7CD23BC0893CAB /* PlaceholderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5A28A7B5890AE44FC21B4 /* PlaceholderTests.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		02FA8451EEB915A08319A70A /* RuuviData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuuviData.swift; sourceTree = "<group>"; };
+		1202CEF25D7BFAD95DD8FBC9 /* DF5ParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DF5ParserTests.swift; sourceTree = "<group>"; };
 		3EB5A28A7B5890AE44FC21B4 /* PlaceholderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTests.swift; sourceTree = "<group>"; };
 		811A21B28A0CAB044D480FF6 /* RuuviDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuuviDataTests.swift; sourceTree = "<group>"; };
 		9D6B080397B566FD276891D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		D391CC77785DB20EA3F9B5D3 /* ambient-ruuviTests */ = {
 			isa = PBXGroup;
 			children = (
+				1202CEF25D7BFAD95DD8FBC9 /* DF5ParserTests.swift */,
 				3EB5A28A7B5890AE44FC21B4 /* PlaceholderTests.swift */,
 				811A21B28A0CAB044D480FF6 /* RuuviDataTests.swift */,
 			);
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48830963474E3247BBF861D5 /* DF5ParserTests.swift in Sources */,
 				AC2305987E7CD23BC0893CAB /* PlaceholderTests.swift in Sources */,
 				70521BF5FEC56DE9725B0D72 /* RuuviDataTests.swift in Sources */,
 			);
