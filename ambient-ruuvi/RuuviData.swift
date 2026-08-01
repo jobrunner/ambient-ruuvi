@@ -53,3 +53,22 @@ extension RuuviData {
         return RuuviData(temperature: temperature, humidity: humidity, pressure: pressure)
     }
 }
+
+extension RuuviData {
+    typealias Row = (label: String, value: String, unit: String)
+
+    var displayRows: [Row] {
+        func f(_ v: Double) -> String { String(format: "%.1f", v) }
+        return [
+            ("Temperatur",       f(temperature), "°C"),
+            ("Luftfeuchtigkeit", f(humidity),    "%"),
+            ("Luftdruck",        f(pressure),    "hPa"),
+            ("Taupunkt",         f(dewPoint),    "°C"),
+        ]
+    }
+
+    var clipboardText: String {
+        displayRows.map { "\($0.label): \($0.value) \($0.unit)" }
+            .joined(separator: "\n")
+    }
+}
