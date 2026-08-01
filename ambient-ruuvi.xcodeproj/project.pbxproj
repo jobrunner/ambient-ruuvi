@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01A726DD6D3ADE5F054CF772 /* ambient_ruuviApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F6B387E8F1A42DF4B04C07 /* ambient_ruuviApp.swift */; };
+		1FBC4E98BFB79B76B0E3FA0C /* DisplayRowsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE672E2C7833D9A43932ACE /* DisplayRowsTests.swift */; };
+		20E2B9BEE9B548CAFF45D617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3C2950DAADE908AF36244BF /* Assets.xcassets */; };
+		48830963474E3247BBF861D5 /* DF5ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202CEF25D7BFAD95DD8FBC9 /* DF5ParserTests.swift */; };
+		69062D46E0CA8C408941D5AD /* RuuviData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FA8451EEB915A08319A70A /* RuuviData.swift */; };
+		70521BF5FEC56DE9725B0D72 /* RuuviDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811A21B28A0CAB044D480FF6 /* RuuviDataTests.swift */; };
+		99B2C61C6E99C5F1278FF04C /* RuuviScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E613C35A1F34F3AC2E39C56 /* RuuviScanner.swift */; };
+		AC2305987E7CD23BC0893CAB /* PlaceholderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5A28A7B5890AE44FC21B4 /* PlaceholderTests.swift */; };
+		E9E289A05F894D00535F4D3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B080397B566FD276891D1 /* ContentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		816263A4851C6D5C15F1F402 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE95698D13851C6E4B0F1875 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED2F46641CDB0263A3FA9C6E;
+			remoteInfo = "ambient-ruuvi";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02FA8451EEB915A08319A70A /* RuuviData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuuviData.swift; sourceTree = "<group>"; };
+		1202CEF25D7BFAD95DD8FBC9 /* DF5ParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DF5ParserTests.swift; sourceTree = "<group>"; };
+		3EB5A28A7B5890AE44FC21B4 /* PlaceholderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTests.swift; sourceTree = "<group>"; };
+		4E613C35A1F34F3AC2E39C56 /* RuuviScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuuviScanner.swift; sourceTree = "<group>"; };
+		5DE672E2C7833D9A43932ACE /* DisplayRowsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRowsTests.swift; sourceTree = "<group>"; };
+		811A21B28A0CAB044D480FF6 /* RuuviDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuuviDataTests.swift; sourceTree = "<group>"; };
+		9D6B080397B566FD276891D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A7CD29A910AA69FC2A6000ED /* ambient-ruuviTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "ambient-ruuviTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A84215419CCCB0511C1DAC4F /* ambient-ruuvi.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ambient-ruuvi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3C2950DAADE908AF36244BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5F6B387E8F1A42DF4B04C07 /* ambient_ruuviApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ambient_ruuviApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		4BB9C67A6A5F7E88C8DC4A2C = {
+			isa = PBXGroup;
+			children = (
+				4E777661B719B3CE0F2C2938 /* ambient-ruuvi */,
+				D391CC77785DB20EA3F9B5D3 /* ambient-ruuviTests */,
+				C2C8252BBC4FB3FE933F6A73 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4E777661B719B3CE0F2C2938 /* ambient-ruuvi */ = {
+			isa = PBXGroup;
+			children = (
+				D5F6B387E8F1A42DF4B04C07 /* ambient_ruuviApp.swift */,
+				B3C2950DAADE908AF36244BF /* Assets.xcassets */,
+				9D6B080397B566FD276891D1 /* ContentView.swift */,
+				02FA8451EEB915A08319A70A /* RuuviData.swift */,
+				4E613C35A1F34F3AC2E39C56 /* RuuviScanner.swift */,
+			);
+			path = "ambient-ruuvi";
+			sourceTree = "<group>";
+		};
+		C2C8252BBC4FB3FE933F6A73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A84215419CCCB0511C1DAC4F /* ambient-ruuvi.app */,
+				A7CD29A910AA69FC2A6000ED /* ambient-ruuviTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D391CC77785DB20EA3F9B5D3 /* ambient-ruuviTests */ = {
+			isa = PBXGroup;
+			children = (
+				1202CEF25D7BFAD95DD8FBC9 /* DF5ParserTests.swift */,
+				5DE672E2C7833D9A43932ACE /* DisplayRowsTests.swift */,
+				3EB5A28A7B5890AE44FC21B4 /* PlaceholderTests.swift */,
+				811A21B28A0CAB044D480FF6 /* RuuviDataTests.swift */,
+			);
+			path = "ambient-ruuviTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0949218D614BA8E11DFAA19D /* ambient-ruuviTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0E69C4309AE2ED697F13B60 /* Build configuration list for PBXNativeTarget "ambient-ruuviTests" */;
+			buildPhases = (
+				B50D34308244EE05297CF1FE /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6F0C0F92D9034BB6942A59D5 /* PBXTargetDependency */,
+			);
+			name = "ambient-ruuviTests";
+			packageProductDependencies = (
+			);
+			productName = "ambient-ruuviTests";
+			productReference = A7CD29A910AA69FC2A6000ED /* ambient-ruuviTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ED2F46641CDB0263A3FA9C6E /* ambient-ruuvi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 572AA2F717E23816BE2D9595 /* Build configuration list for PBXNativeTarget "ambient-ruuvi" */;
+			buildPhases = (
+				D4072693611F88D7F851EFDB /* Sources */,
+				DC2F76D47870142EE1A10976 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ambient-ruuvi";
+			packageProductDependencies = (
+			);
+			productName = "ambient-ruuvi";
+			productReference = A84215419CCCB0511C1DAC4F /* ambient-ruuvi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE95698D13851C6E4B0F1875 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					ED2F46641CDB0263A3FA9C6E = {
+						DevelopmentTeam = XS554Q5YY9;
+					};
+				};
+			};
+			buildConfigurationList = EACD265B13405D2F753C923C /* Build configuration list for PBXProject "ambient-ruuvi" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 4BB9C67A6A5F7E88C8DC4A2C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C2C8252BBC4FB3FE933F6A73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED2F46641CDB0263A3FA9C6E /* ambient-ruuvi */,
+				0949218D614BA8E11DFAA19D /* ambient-ruuviTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC2F76D47870142EE1A10976 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E2B9BEE9B548CAFF45D617 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B50D34308244EE05297CF1FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48830963474E3247BBF861D5 /* DF5ParserTests.swift in Sources */,
+				1FBC4E98BFB79B76B0E3FA0C /* DisplayRowsTests.swift in Sources */,
+				AC2305987E7CD23BC0893CAB /* PlaceholderTests.swift in Sources */,
+				70521BF5FEC56DE9725B0D72 /* RuuviDataTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4072693611F88D7F851EFDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9E289A05F894D00535F4D3C /* ContentView.swift in Sources */,
+				69062D46E0CA8C408941D5AD /* RuuviData.swift in Sources */,
+				99B2C61C6E99C5F1278FF04C /* RuuviScanner.swift in Sources */,
+				01A726DD6D3ADE5F054CF772 /* ambient_ruuviApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6F0C0F92D9034BB6942A59D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED2F46641CDB0263A3FA9C6E /* ambient-ruuvi */;
+			targetProxy = 816263A4851C6D5C15F1F402 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		50B3325BB4DF14DCB5CF8283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = XS554Q5YY9;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Zum Auslesen der RuuviTag-Sensordaten per Bluetooth.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.brunner.ambient-ruuvi";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5E2BDA59668305F30B331600 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.brunner.ambient-ruuviTests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ambient-ruuvi.app/ambient-ruuvi";
+			};
+			name = Debug;
+		};
+		721E60608F18EBBB241B4732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = XS554Q5YY9;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Zum Auslesen der RuuviTag-Sensordaten per Bluetooth.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.brunner.ambient-ruuvi";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80F5A98CC6683BA42342AD6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DEE30141953EA3D707FB80D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.brunner.ambient-ruuviTests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ambient-ruuvi.app/ambient-ruuvi";
+			};
+			name = Release;
+		};
+		E1B68864C710E3A76DE239D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		572AA2F717E23816BE2D9595 /* Build configuration list for PBXNativeTarget "ambient-ruuvi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				721E60608F18EBBB241B4732 /* Debug */,
+				50B3325BB4DF14DCB5CF8283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EACD265B13405D2F753C923C /* Build configuration list for PBXProject "ambient-ruuvi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1B68864C710E3A76DE239D6 /* Debug */,
+				80F5A98CC6683BA42342AD6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F0E69C4309AE2ED697F13B60 /* Build configuration list for PBXNativeTarget "ambient-ruuviTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E2BDA59668305F30B331600 /* Debug */,
+				DEE30141953EA3D707FB80D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE95698D13851C6E4B0F1875 /* Project object */;
+}
