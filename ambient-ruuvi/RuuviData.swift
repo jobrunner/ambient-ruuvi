@@ -21,6 +21,34 @@ struct RuuviData: Equatable {
     }
 }
 
+/// Fachliche Einordnung des Taupunkts nach Behaglichkeit. Die Grenze zur
+/// Schwüle (Taupunkt ≥ 16 °C) folgt der Definition des Deutschen Wetterdienstes.
+enum DewPointComfort: String {
+    case dry        = "trocken"
+    case comfortable = "behaglich"
+    case moderate   = "mäßig feucht"
+    case muggy      = "schwül"
+    case veryMuggy  = "stark schwül"
+    case oppressive = "drückend feucht"
+
+    static func classify(dewPoint t: Double) -> DewPointComfort {
+        switch t {
+        case ..<10: return .dry
+        case ..<13: return .comfortable
+        case ..<16: return .moderate
+        case ..<18: return .muggy
+        case ..<21: return .veryMuggy
+        default:    return .oppressive
+        }
+    }
+}
+
+extension RuuviData {
+    var dewPointComfort: DewPointComfort {
+        DewPointComfort.classify(dewPoint: dewPoint)
+    }
+}
+
 extension RuuviData {
     static func parse(manufacturerData data: Data) -> RuuviData? {
         // 2 Byte ID + mindestens Format..Druck (bis Offset 6 im Payload) = 2 + 7
@@ -55,15 +83,15 @@ extension RuuviData {
 }
 
 extension RuuviData {
-    typealias Row = (label: String, value: String, unit: String)
+    typealias Row = (label: String, value: String, unit: String, note: String?)
 
     var displayRows: [Row] {
         func f(_ v: Double) -> String { String(format: "%.1f", v) }
         return [
-            ("Temperatur",       f(temperature), "°C"),
-            ("Luftfeuchtigkeit", f(humidity),    "%"),
-            ("Luftdruck",        f(pressure),    "hPa"),
-            ("Taupunkt",         f(dewPoint),    "°C"),
+            ("Temperatur",       f(temperature), "°C",  nil),
+            ("Luftfeuchtigkeit", f(humidity),    "%",   nil),
+            ("Luftdruck",        f(pressure),    "hPa", nil),
+            ("Taupunkt",         f(dewPoint),    "°C",  dewPointComfort.rawValue),
         ]
     }
 

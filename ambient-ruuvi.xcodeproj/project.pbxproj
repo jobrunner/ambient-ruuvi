@@ -16,6 +16,7 @@
 		70521BF5FEC56DE9725B0D72 /* RuuviDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811A21B28A0CAB044D480FF6 /* RuuviDataTests.swift */; };
 		99B2C61C6E99C5F1278FF04C /* RuuviScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E613C35A1F34F3AC2E39C56 /* RuuviScanner.swift */; };
 		AC2305987E7CD23BC0893CAB /* PlaceholderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5A28A7B5890AE44FC21B4 /* PlaceholderTests.swift */; };
+		D740DF9D2DE0E66B960852CE /* DewPointComfortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B7CCD1313EC1A8178E86E /* DewPointComfortTests.swift */; };
 		E9E289A05F894D00535F4D3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B080397B566FD276891D1 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		02FA8451EEB915A08319A70A /* RuuviData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuuviData.swift; sourceTree = "<group>"; };
+		077B7CCD1313EC1A8178E86E /* DewPointComfortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewPointComfortTests.swift; sourceTree = "<group>"; };
 		1202CEF25D7BFAD95DD8FBC9 /* DF5ParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DF5ParserTests.swift; sourceTree = "<group>"; };
 		3EB5A28A7B5890AE44FC21B4 /* PlaceholderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTests.swift; sourceTree = "<group>"; };
 		4E613C35A1F34F3AC2E39C56 /* RuuviScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuuviScanner.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		D391CC77785DB20EA3F9B5D3 /* ambient-ruuviTests */ = {
 			isa = PBXGroup;
 			children = (
+				077B7CCD1313EC1A8178E86E /* DewPointComfortTests.swift */,
 				1202CEF25D7BFAD95DD8FBC9 /* DF5ParserTests.swift */,
 				5DE672E2C7833D9A43932ACE /* DisplayRowsTests.swift */,
 				3EB5A28A7B5890AE44FC21B4 /* PlaceholderTests.swift */,
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48830963474E3247BBF861D5 /* DF5ParserTests.swift in Sources */,
+				D740DF9D2DE0E66B960852CE /* DewPointComfortTests.swift in Sources */,
 				1FBC4E98BFB79B76B0E3FA0C /* DisplayRowsTests.swift in Sources */,
 				AC2305987E7CD23BC0893CAB /* PlaceholderTests.swift in Sources */,
 				70521BF5FEC56DE9725B0D72 /* RuuviDataTests.swift in Sources */,

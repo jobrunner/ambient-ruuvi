@@ -13,12 +13,19 @@ struct ContentView: View {
             if let data = scanner.data {
                 VStack(spacing: 12) {
                     ForEach(data.displayRows, id: \.label) { row in
-                        HStack {
-                            Text(row.label)
-                            Spacer()
-                            Text("\(row.value) \(row.unit)")
-                                .foregroundStyle(.secondary)
-                                .monospacedDigit()
+                        VStack(alignment: .leading, spacing: 2) {
+                            HStack {
+                                Text(row.label)
+                                Spacer()
+                                Text("\(row.value) \(row.unit)")
+                                    .foregroundStyle(.secondary)
+                                    .monospacedDigit()
+                            }
+                            if let note = row.note {
+                                Text(note)
+                                    .font(.caption)
+                                    .foregroundStyle(.tertiary)
+                            }
                         }
                     }
                 }
