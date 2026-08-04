@@ -31,7 +31,10 @@ enum DewPointComfort: String {
     case veryMuggy  = "stark schwül"
     case oppressive = "drückend feucht"
 
-    static func classify(dewPoint t: Double) -> DewPointComfort {
+    /// Liefert `nil` für nicht-finite Taupunkte (z. B. wenn eine Feuchte von 0 %
+    /// die Magnus-Formel auf NaN treibt) — statt fälschlich die extremste Stufe.
+    static func classify(dewPoint t: Double) -> DewPointComfort? {
+        guard t.isFinite else { return nil }
         switch t {
         case ..<10: return .dry
         case ..<13: return .comfortable
@@ -44,7 +47,7 @@ enum DewPointComfort: String {
 }
 
 extension RuuviData {
-    var dewPointComfort: DewPointComfort {
+    var dewPointComfort: DewPointComfort? {
         DewPointComfort.classify(dewPoint: dewPoint)
     }
 }
@@ -91,7 +94,7 @@ extension RuuviData {
             ("Temperatur",       f(temperature), "°C",  nil),
             ("Luftfeuchtigkeit", f(humidity),    "%",   nil),
             ("Luftdruck",        f(pressure),    "hPa", nil),
-            ("Taupunkt",         f(dewPoint),    "°C",  dewPointComfort.rawValue),
+            ("Taupunkt",         f(dewPoint),    "°C",  dewPointComfort?.rawValue),
         ]
     }
 

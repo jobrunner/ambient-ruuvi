@@ -22,6 +22,17 @@ final class DewPointComfortTests: XCTestCase {
         XCTAssertEqual(DewPointComfort.classify(dewPoint: 30.0), .oppressive)
     }
 
+    func testNonFiniteDewPointHasNoClassification() {
+        XCTAssertNil(DewPointComfort.classify(dewPoint: .nan))
+        XCTAssertNil(DewPointComfort.classify(dewPoint: -.infinity))
+
+        // Feuchte 0 % treibt die Magnus-Formel auf NaN → kein Label, keine note.
+        let degenerate = RuuviData(temperature: 20.0, humidity: 0.0, pressure: 1013.2)
+        XCTAssertNil(degenerate.dewPointComfort)
+        let dewRow = degenerate.displayRows.first { $0.label == "Taupunkt" }
+        XCTAssertNil(dewRow?.note)
+    }
+
     func testOnlyDewPointRowCarriesNote() {
         let rows = RuuviData(temperature: 21.4, humidity: 48.5, pressure: 1013.2).displayRows
         for row in rows where row.label != "Taupunkt" {
