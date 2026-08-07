@@ -54,6 +54,18 @@ final class RuuviScanner: NSObject, ObservableObject {
         refreshTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in
             Task { @MainActor in self?.refresh() }
         }
+        // Beim (Wieder-)Start sofort aufräumen: ein aus einem früheren Lauf
+        // erhaltener, inzwischen abgelaufener Tag wird nicht erst nach dem
+        // ersten Timer-Tick (bis 2 s) verworfen.
+        refresh()
+    }
+
+    /// Verworfene Verbindung: veröffentlichte Messwerte fallen lassen, damit die
+    /// UI nicht einen toten Altwert als „live“ zeigt (z. B. bei Bluetooth aus).
+    private func clearReadings() {
+        seenTags.removeAll()
+        data = nil
+        rssi = nil
     }
 
     /// Evict aged-out tags and publish the strongest survivor, or clear the
@@ -86,9 +98,9 @@ extension RuuviScanner: CBCentralManagerDelegate {
         Task { @MainActor in
             switch central.state {
             case .poweredOn:     beginScan()
-            case .poweredOff:    state = .bluetoothOff
-            case .unauthorized:  state = .unauthorized
-            default:             state = .noTag
+            case .poweredOff:    clearReadings(); state = .bluetoothOff
+            case .unauthorized:  clearReadings(); state = .unauthorized
+            default:             clearReadings(); state = .noTag
             }
         }
     }

@@ -62,7 +62,10 @@ struct ContentView: View {
                 scanner.stop()
                 UIApplication.shared.isIdleTimerDisabled = false
             case .inactive:
-                break // nur transient (App-Switcher, Banner) — nichts abreißen
+                // Nur transient (App-Switcher, Banner) — Scan NICHT abreißen,
+                // aber das Display freigeben, damit der Wach-Zustand nicht über
+                // einen aktiven Zustand hinaus hängen bleibt.
+                UIApplication.shared.isIdleTimerDisabled = false
             @unknown default:
                 break
             }
