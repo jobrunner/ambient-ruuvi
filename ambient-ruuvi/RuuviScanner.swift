@@ -41,7 +41,10 @@ final class RuuviScanner: NSObject, ObservableObject {
 
     private func beginScan() {
         guard central.state == .poweredOn else { return }
-        seenTags.removeAll()
+        // seenTags bewusst NICHT löschen: bei einem kurzen Wechsel in den
+        // Hintergrund (und zurück) bleibt der letzte Messwert erhalten, statt
+        // dass die Anzeige auf „Suche…“ zurückfällt. Verwaiste Tags räumt der
+        // Expiry-Mechanismus in refresh() nach expiryInterval ohnehin auf.
         state = .scanning
         central.scanForPeripherals(
             withServices: nil,

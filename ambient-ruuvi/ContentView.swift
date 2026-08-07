@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var scanner = RuuviScanner()
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
         VStack(spacing: 24) {
@@ -48,8 +49,31 @@ struct ContentView: View {
             Spacer()
         }
         .padding()
-        .onAppear { scanner.start() }
-        .onDisappear { scanner.stop() }
+        .onAppear { resumeScanning() }
+        .onChange(of: scenePhase) { phase in
+            switch phase {
+            case .active:
+                // Beim Zurückkehren den Scan fortsetzen — dank erhaltenem
+                // seenTags ohne „Suche…“-Flackern.
+                resumeScanning()
+            case .background:
+                // Suspendiert liefert iOS ohnehin keine Advertisements mehr:
+                // Scan stoppen (Akku) und Display wieder freigeben.
+                scanner.stop()
+                UIApplication.shared.isIdleTimerDisabled = false
+            case .inactive:
+                break // nur transient (App-Switcher, Banner) — nichts abreißen
+            @unknown default:
+                break
+            }
+        }
+    }
+
+    /// Startet bzw. setzt den Scan fort und hält das Display wach, solange die
+    /// Anzeige aktiv ist (Ambient-Betrieb) — kein Auto-Lock.
+    private func resumeScanning() {
+        scanner.start()
+        UIApplication.shared.isIdleTimerDisabled = true
     }
 
     private var hint: String {
