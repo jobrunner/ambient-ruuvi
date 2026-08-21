@@ -1,0 +1,47 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0"    stop-color="#0A3A47"/>
+      <stop offset="0.55" stop-color="#12525F"/>
+      <stop offset="1"    stop-color="#1B6E71"/>
+    </linearGradient>
+    <radialGradient id="warm" cx="512" cy="880" r="620" gradientUnits="userSpaceOnUse">
+      <stop offset="0"   stop-color="#E9A15C" stop-opacity="0.20"/>
+      <stop offset="0.6" stop-color="#E9A15C" stop-opacity="0.0"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="512" cy="560" r="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0"   stop-color="#BFF0F2" stop-opacity="0.18"/>
+      <stop offset="1"   stop-color="#BFF0F2" stop-opacity="0.0"/>
+    </radialGradient>
+    <linearGradient id="drop" x1="512" y1="335" x2="512" y2="735" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#D6EEF2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Full-bleed background (iOS masks the corners itself) -->
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <rect width="1024" height="1024" fill="url(#warm)"/>
+  <rect width="1024" height="1024" fill="url(#glow)"/>
+
+  <!-- Broadcast arcs radiating from the droplet -->
+  <g fill="none" stroke="#FFFFFF" stroke-linecap="round">
+    <!-- right side -->
+    <path d="M 638.2 423.5 A 205 205 0 0 1 638.2 746.5" stroke-width="17" opacity="0.90"/>
+    <path d="M 678.2 372.2 A 270 270 0 0 1 678.2 797.8" stroke-width="17" opacity="0.55"/>
+    <path d="M 718.3 321.0 A 335 335 0 0 1 718.3 849.0" stroke-width="17" opacity="0.32"/>
+    <!-- left side -->
+    <path d="M 385.8 423.5 A 205 205 0 0 0 385.8 746.5" stroke-width="17" opacity="0.90"/>
+    <path d="M 345.8 372.2 A 270 270 0 0 0 345.8 797.8" stroke-width="17" opacity="0.55"/>
+    <path d="M 305.7 321.0 A 335 335 0 0 0 305.7 849.0" stroke-width="17" opacity="0.32"/>
+  </g>
+
+  <!-- Water droplet -->
+  <path d="M 512 335
+           C 430 470, 362 520, 362 585
+           A 150 150 0 1 0 662 585
+           C 662 520, 594 470, 512 335 Z"
+        fill="url(#drop)"/>
+  <!-- soft highlight on the droplet -->
+  <ellipse cx="452" cy="560" rx="46" ry="70" fill="#FFFFFF" opacity="0.55"/>
+</svg>
